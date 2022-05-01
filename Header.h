@@ -20,27 +20,27 @@ private:
 public:
 	void SetFn() {
 		string name;
-		cin >> name;
+		getline(cin, name);
 		fname = name;
 	}
 	void SetSn() {
 		string secname;
-		cin >> secname;
+		getline(cin, secname);
 		sname = secname;
 	}
 	void SetAge() {
 		string AGE;
-		cin >> AGE;
+		getline(cin, AGE);
 		age = AGE;
 	}
 	void SetAd() {
 		string adres;
-		cin >> adres;
+		getline(cin, adres);
 		address = adres;
 	}
 	void SetP() {
 		string Phone;
-		cin >> Phone;
+		getline(cin,Phone);
 		phone = Phone;
 	}
 	string GetFn() {

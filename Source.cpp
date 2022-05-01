@@ -6,6 +6,7 @@ using namespace std;
 
 
 void show_menu() {
+	setlocale(0, "rus");
 	cout << "[1] Добавить контакт." << endl;
 	cout << "[2] Показать все контакты." << endl;
 	cout << "[3] Найти контакт." << endl;
@@ -18,6 +19,7 @@ void show_menu() {
 
 
 void add_Contact() {
+	setlocale(0, "rus");
 	Contact a;
 	ofstream file("notes.txt", ios::app);
 	if (!file.is_open()) {
@@ -34,7 +36,7 @@ void add_Contact() {
 	a.SetAd();
 	cout << "Введите номер телефона" << endl;
 	a.SetP();
-	file << a.GetSn() <<' ' << a.GetFn() <<' '<< a.GetAd() <<' '<< a.GetAd() <<' '<< a.GetP() << endl;
+	file << a.GetSn() <<' ' << a.GetFn() <<' '<< a.GetAge() <<' '<< a.GetAd() <<' '<< a.GetP() << endl;
 	file.close();
 	cout << "Note added!" << endl;
 }
@@ -42,6 +44,7 @@ void add_Contact() {
 
 
 void see_all_Contacts() {
+	setlocale(0, "rus");
 	ifstream file("notes.txt");
 
 	if (!file.is_open()) {
@@ -62,6 +65,7 @@ void see_all_Contacts() {
 
 
 string* findContact(const string& Contact_to_find, int& n_count) {
+	setlocale(0, "rus");
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
 		cout << "No notes! Add them!" << endl;
@@ -95,6 +99,7 @@ string* findContact(const string& Contact_to_find, int& n_count) {
 
 
 string* all_Contacts(int& n_count) {
+	setlocale(0, "rus");
 	string* all_notes = nullptr;
 	string* all_notes_ptr = nullptr;
 	ifstream file("notes.txt");
@@ -130,6 +135,7 @@ string* all_Contacts(int& n_count) {
 
 
 void remove_one_Contacts(string* all_notes_arr, int count, int choice) {
+	setlocale(0, "rus");
 	ofstream file("notes.txt");
 	if (!file.is_open()) {
 		cout << "[-]Error! File is not opened!" << endl;
@@ -144,6 +150,7 @@ void remove_one_Contacts(string* all_notes_arr, int count, int choice) {
 
 
 void remove_all_Contacts() {
+	setlocale(0, "rus");
 	fstream file("notes.txt", ios::out | ios::trunc);
 	if (!file.is_open()) {
 		cout << "File is not opened!" << endl;
@@ -161,8 +168,8 @@ void Sort() {
 		n += 1;
 	}
 	string temp = "";
-	for (int i = 0; i < n-1; i++) {
-		for (int j = i; j < n; j++) {
+	for (int i = 0; i < n - 2; i++) {
+		for (int j = i + 1; j < n - 1; j++) {
 			if (s_notes[i][0] >= s_notes[j][0]) {
 				temp = s_notes[i];
 				s_notes[i] = s_notes[j];
@@ -176,7 +183,7 @@ void Sort() {
 		if (i == n - 1)
 			ofile << s_notes[i];
 		else
-			ofile << s_notes[i] << "\n";
+			ofile << s_notes[i] << '\n';
 	}
 	ofile.close();
 	delete[] s_notes;
