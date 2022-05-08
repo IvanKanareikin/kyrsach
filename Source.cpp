@@ -43,7 +43,7 @@ void Contact::add_Contact() {
 
 
 
-void Contact::see_all_Contacts() {
+void Book::see_all_Contacts() {
 	setlocale(0, "rus");
 	ifstream file("notes.txt");
 
@@ -149,7 +149,7 @@ void Contact::remove_one_Contacts(string* all_notes_arr, int count, int choice) 
 }
 
 
-void Contact::remove_all_Contacts() {
+void Book::remove_all_Contacts() {
 	setlocale(0, "rus");
 	fstream file("notes.txt", ios::out | ios::trunc);
 	if (!file.is_open()) {
@@ -159,7 +159,7 @@ void Contact::remove_all_Contacts() {
 	file.close();
 }
 
-void Contact:: Sort() {
+void Book:: Sort() {
 	ifstream file("notes.txt");
 	int n = 0;
 	string* s_notes = new string[100];

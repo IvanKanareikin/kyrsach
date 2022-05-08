@@ -60,12 +60,20 @@ public:
 	}
 
 	void add_Contact();
-	void see_all_Contacts();
+	//void see_all_Contacts();
 	string* findContact(const string& note_to_find, int& n_count);
 	string* all_Contacts(int& count);
 	void remove_one_Contacts(string* all_notes_arr, int count, int choice);
-	void remove_all_Contacts();
-	void Sort();
+	//void remove_all_Contacts();
+	//void Sort();
 };
+
+struct Book: public Contact {
+	void Sort();
+	void remove_all_Contacts();
+	void see_all_Contacts();
+};
+
+void show_menu();
 
 #endif

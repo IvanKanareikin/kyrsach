@@ -6,7 +6,8 @@
 
 int main() {
 	setlocale(0, "rus");
-	Contact book;
+	Contact a;
+	Book b;
 	char choice;
 	char Exit;
 	do {
@@ -20,11 +21,11 @@ int main() {
 		case '1': {
 			system("cls");
 			cout << "Contact to add: ";
-			add_Contact(); }
+			a.add_Contact(); }
 				break;
 		case '2': {
 			system("cls");
-			see_all_Contacts(); }
+			b.see_all_Contacts(); }
 				break;
 		case '3': {
 			system("cls");
@@ -32,7 +33,7 @@ int main() {
 			cout << "Contact to find: ";
 			getline(cin, Contact_to_find);
 			int n_found = 0;
-			string* found_Contacts = findContact(Contact_to_find, n_found);
+			string* found_Contacts = a.findContact(Contact_to_find, n_found);
 			if (found_Contacts) {
 				cout << "Found notes: ";
 				for (int i = 0; i < n_found; i++)
@@ -48,7 +49,7 @@ int main() {
 			system("cls");
 			//Получаем все заметки
 			int count = 0;
-			string* all_notes_arr = all_Contacts(count);
+			string* all_notes_arr = a.all_Contacts(count);
 			//Выводим их в консоль
 			cout << "All contacts: " << endl;
 			for (int i = 0; i < count; i++)
@@ -56,14 +57,14 @@ int main() {
 			cout << "Number of contact to remove: ";
 			int choice = 0;
 			cin >> choice;
-			remove_one_Contacts(all_notes_arr, count, choice);
+			a.remove_one_Contacts(all_notes_arr, count, choice);
 			cout << "Your contact removed" << endl;
 			delete[] all_notes_arr;;
 		}
 				break;
 		case '5': {
 			system("cls");
-			remove_all_Contacts();
+			b.remove_all_Contacts();
 			cout << "Remove all contacts!" << endl;
 		}
 				break;
@@ -71,7 +72,7 @@ int main() {
 			system("cls");
 			//Получаем все контакты
 			int count = 0;
-			string* all_notes_arr = all_Contacts(count);
+			string* all_notes_arr = a.all_Contacts(count);
 			//Выводим их в консоль
 			cout << "All contacts: " << endl;
 			for (int i = 0; i < count; i++)
@@ -79,14 +80,14 @@ int main() {
 			cout << "Number of contacts to edit: ";
 			int choice = 0;
 			cin >> choice;
-			remove_one_Contacts(all_notes_arr, count, choice);
-			add_Contact();
+			a.remove_one_Contacts(all_notes_arr, count, choice);
+			a.add_Contact();
 			cout << "Contact changed!" << endl;
 			delete[] all_notes_arr;
 			break;
 		}
 		case '7': {
-			Sort();
+			b.Sort();
 			break;
 		}
 		}
