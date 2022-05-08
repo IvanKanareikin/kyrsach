@@ -18,7 +18,7 @@ void show_menu() {
 
 
 
-void add_Contact() {
+void Contact::add_Contact() {
 	setlocale(0, "rus");
 	Contact a;
 	ofstream file("notes.txt", ios::app);
@@ -43,7 +43,7 @@ void add_Contact() {
 
 
 
-void see_all_Contacts() {
+void Contact::see_all_Contacts() {
 	setlocale(0, "rus");
 	ifstream file("notes.txt");
 
@@ -64,7 +64,7 @@ void see_all_Contacts() {
 
 
 
-string* findContact(const string& Contact_to_find, int& n_count) {
+string* Contact::findContact(const string& Contact_to_find, int& n_count) {
 	setlocale(0, "rus");
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
@@ -98,7 +98,7 @@ string* findContact(const string& Contact_to_find, int& n_count) {
 
 
 
-string* all_Contacts(int& n_count) {
+string* Contact::all_Contacts(int& n_count) {
 	setlocale(0, "rus");
 	string* all_notes = nullptr;
 	string* all_notes_ptr = nullptr;
@@ -134,7 +134,7 @@ string* all_Contacts(int& n_count) {
 
 
 
-void remove_one_Contacts(string* all_notes_arr, int count, int choice) {
+void Contact::remove_one_Contacts(string* all_notes_arr, int count, int choice) {
 	setlocale(0, "rus");
 	ofstream file("notes.txt");
 	if (!file.is_open()) {
@@ -149,7 +149,7 @@ void remove_one_Contacts(string* all_notes_arr, int count, int choice) {
 }
 
 
-void remove_all_Contacts() {
+void Contact::remove_all_Contacts() {
 	setlocale(0, "rus");
 	fstream file("notes.txt", ios::out | ios::trunc);
 	if (!file.is_open()) {
@@ -159,7 +159,7 @@ void remove_all_Contacts() {
 	file.close();
 }
 
-void Sort() {
+void Contact:: Sort() {
 	ifstream file("notes.txt");
 	int n = 0;
 	string* s_notes = new string[100];
