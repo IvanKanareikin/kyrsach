@@ -58,7 +58,6 @@ public:
 };
 
 class Book {
-	//vector<Contact> contacts;
 public:
 	void add_Contact();
 	string* findContact(const string& note_to_find, int& n_count);
