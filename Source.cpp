@@ -26,7 +26,7 @@ void show_menu2() {
 	cout << "[3] Отсортировать все контакты." << endl;
 }
 
-void Contact::add_Contact() {
+void Book::add_Contact() {
 	setlocale(0, "rus");
 	Contact a;
 	ofstream file("notes.txt", ios::app);
@@ -72,7 +72,7 @@ void Book::see_all_Contacts() {
 
 
 
-string* Contact::findContact(const string& Contact_to_find, int& n_count) {
+string* Book::findContact(const string& Contact_to_find, int& n_count) {
 	setlocale(0, "rus");
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
@@ -106,7 +106,7 @@ string* Contact::findContact(const string& Contact_to_find, int& n_count) {
 
 
 
-string* Contact::all_Contacts(int& n_count) {
+string* Book::all_Contacts(int& n_count) {
 	setlocale(0, "rus");
 	string* all_notes = nullptr;
 	string* all_notes_ptr = nullptr;
@@ -142,7 +142,7 @@ string* Contact::all_Contacts(int& n_count) {
 
 
 
-void Contact::remove_one_Contacts(string* all_notes_arr, int count, int choice) {
+void Book::remove_one_Contacts(string* all_notes_arr, int count, int choice) {
 	setlocale(0, "rus");
 	ofstream file("notes.txt");
 	if (!file.is_open()) {

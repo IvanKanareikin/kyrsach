@@ -4,9 +4,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
 
 using namespace std;
 
@@ -58,14 +55,15 @@ public:
 	string GetP() {
 		return phone;
 	}
+};
 
+class Book {
+	//vector<Contact> contacts;
+public:
 	void add_Contact();
 	string* findContact(const string& note_to_find, int& n_count);
 	string* all_Contacts(int& count);
 	void remove_one_Contacts(string* all_notes_arr, int count, int choice);
-};
-
-struct Book: public Contact {
 	void Sort();
 	void remove_all_Contacts();
 	void see_all_Contacts();
