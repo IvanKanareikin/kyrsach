@@ -6,8 +6,7 @@
 
 int main() {
 	setlocale(0, "rus");
-	Contact a;
-	Book b;
+	Book a;
 	char choice;
 	char choice1;
 	char choice2;
@@ -99,22 +98,18 @@ int main() {
 			switch (choice2) {
 			case'1': {
 				system("cls");
-				b.see_all_Contacts(); }
+				a.see_all_Contacts(); }
 				   break;
 			case'2': {
 				system("cls");
-				b.remove_all_Contacts();
+				a.remove_all_Contacts();
 				cout << "Remove all contacts!" << endl;
 			}
 				   break;
 			case'3': {
-				b.Sort();
+				a.Sort();
 				break; }
 			}
-			/*cout << endl << "Do you want to make another operation? (1 - yes, 0 - no)" << endl;
-			fflush(stdin);
-			Exit = _getch();
-		} while (Exit != '0');*/
 		}
 	}cout << endl << "Do you want to make another operation? (1 - yes, 0 - no)" << endl;
 		fflush(stdin);
