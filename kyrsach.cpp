@@ -79,7 +79,7 @@ int main() {
 				cout << "Number of contacts to edit: ";
 				int choice = 0;
 				cin >> choice;
-				a.remove_one_Contacts(all_notes_arr, count, choice);
+				a.remove_Contact(all_notes_arr, count, choice);
 				a.add_Contact();
 				cout << "Contact changed!" << endl;
 				delete[] all_notes_arr;
