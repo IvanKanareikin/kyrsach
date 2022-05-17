@@ -142,7 +142,7 @@ string* Book::all_Contacts(int& n_count) {
 
 
 
-void Book::remove_one_Contacts(string* all_notes_arr, int count, int choice) {
+void Book::remove_Contact(string* all_notes_arr, int count, int choice) {
 	setlocale(0, "rus");
 	ofstream file("notes.txt");
 	if (!file.is_open()) {

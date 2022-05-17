@@ -62,7 +62,7 @@ int main() {
 				cout << "Number of contact to remove: ";
 				int choice = 0;
 				cin >> choice;
-				a.remove_one_Contacts(all_notes_arr, count, choice);
+				a.remove_Contact(all_notes_arr, count, choice);
 				cout << "Your contact removed" << endl;
 				delete[] all_notes_arr;
 				break;
@@ -87,7 +87,6 @@ int main() {
 			}
 			break;
 		}
-
 		case'2': {
 			do {
 				system("cls");
@@ -116,5 +115,3 @@ int main() {
 		Exit = _getch();
 		} while (Exit != '0');
 }
-
-// сортировка 

@@ -62,7 +62,7 @@ public:
 	void add_Contact();
 	string* findContact(const string& note_to_find, int& n_count);
 	string* all_Contacts(int& count);
-	void remove_one_Contacts(string* all_notes_arr, int count, int choice);
+	void remove_Contact(string* all_notes_arr, int count, int choice);
 	void Sort();
 	void remove_all_Contacts();
 	void see_all_Contacts();
