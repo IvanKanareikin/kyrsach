@@ -54,17 +54,17 @@ int main() {
 				system("cls");
 				//Получаем все заметки
 				int count = 0;
-				string* all_notes_arr = a.all_Contacts(count);
+				string* all_Contacts_arr = a.all_Contacts(count);
 				//Выводим их в консоль
 				cout << "All contacts: " << endl;
 				for (int i = 0; i < count; i++)
-					cout << "[" << i + 1 << "]" << all_notes_arr[i] << endl;
+					cout << "[" << i + 1 << "]" << all_Contacts_arr[i] << endl;
 				cout << "Number of contact to remove: ";
 				int choice = 0;
 				cin >> choice;
-				a.remove_Contact(all_notes_arr, count, choice);
+				a.remove_Contact(all_Contacts_arr, count, choice);
 				cout << "Your contact removed" << endl;
-				delete[] all_notes_arr;
+				delete[] all_Contacts_arr;
 				break;
 			}
 			}

@@ -129,7 +129,7 @@ string* Book::all_Contacts(int& n_count) {
 		all_Contacts_ptr[count1 - 1] = one_Contact;
 		//Очищаем старый массив all_notes
 		delete[] all_Contacts;
-		//all_notes указывает на новый массив;
+		//all_Contacts указывает на новый массив;
 		all_Contacts = all_Contacts_ptr;
 		all_Contacts_ptr = nullptr;
 	}
