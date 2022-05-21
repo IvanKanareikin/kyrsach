@@ -16,7 +16,6 @@ void show_menu1() {
 	cout << "[1] Добавить контакт." << endl;
 	cout << "[2] Найти контакт." << endl;
 	cout << "[3] Удалить контакт." << endl;
-	cout << "[4] Изменить контакт." << endl;
 }
 
 void show_menu2() {
@@ -108,41 +107,41 @@ string* Book::findContact(const string& Contact_to_find, int& n_count) {
 
 string* Book::all_Contacts(int& n_count) {
 	setlocale(0, "rus");
-	string* all_notes = nullptr;
-	string* all_notes_ptr = nullptr;
+	string* all_Contacts = nullptr;
+	string* all_Contacts_ptr = nullptr;
 	ifstream file("notes.txt");
 	if (!file.is_open()) {
 		cout << "File is not opened!";
 		exit(EXIT_FAILURE);
 	}
-	string one_note;
-	int count = 0;
+	string one_Contact;
+	int count1 = 0;
 	while (!file.eof()) {
-		getline(file, one_note);
-		if (one_note.empty())
+		getline(file, one_Contact);
+		if (one_Contact.empty())
 			continue;
-		count++;
-		all_notes_ptr = new string[count];
+		count1++;
+		all_Contacts_ptr = new string[count1];
 		//Копируем уже считанные заметки
-		for (int i = 0; i < count - 1; i++)
-			all_notes_ptr[i] = all_notes[i];
+		for (int i = 0; i < count1 - 1; i++)
+			all_Contacts_ptr[i] = all_Contacts[i];
 		//Добавляем новую заметку
-		all_notes_ptr[count - 1] = one_note;
+		all_Contacts_ptr[count1 - 1] = one_Contact;
 		//Очищаем старый массив all_notes
-		delete[] all_notes;
+		delete[] all_Contacts;
 		//all_notes указывает на новый массив;
-		all_notes = all_notes_ptr;
-		all_notes_ptr = nullptr;
+		all_Contacts = all_Contacts_ptr;
+		all_Contacts_ptr = nullptr;
 	}
 	file.close();
-	n_count = count;
-	return all_notes;
+	n_count = count1;
+	return all_Contacts;
 }
 
 
 
 
-void Book::remove_Contact(string* all_notes_arr, int count, int choice) {
+void Book::remove_Contact(string* all_Contacts_arr, int count, int choice) {
 	setlocale(0, "rus");
 	ofstream file("notes.txt");
 	if (!file.is_open()) {
@@ -152,7 +151,7 @@ void Book::remove_Contact(string* all_notes_arr, int count, int choice) {
 	for (int i = 0; i < count; i++) {
 		if (i + 1 == choice)
 			continue;
-		file << all_notes_arr[i] << endl;
+		file << all_Contacts_arr[i] << endl;
 	}
 }
 
@@ -170,18 +169,18 @@ void Book::remove_all_Contacts() {
 void Book:: Sort() {
 	ifstream file("notes.txt");
 	int n = 0;
-	string* s_notes = new string[100];
+	string* s_Contacts = new string[100];
 	while (!file.eof()) {
-		getline(file, s_notes[n]);
+		getline(file, s_Contacts[n]);
 		n += 1;
 	}
 	string temp = "";
 	for (int i = 0; i < n - 2; i++) {
 		for (int j = i + 1; j < n - 1; j++) {
-			if (s_notes[i][0] >= s_notes[j][0]) {
-				temp = s_notes[i];
-				s_notes[i] = s_notes[j];
-				s_notes[j] = temp;
+			if (s_Contacts[i][0] >= s_Contacts[j][0]) {
+				temp = s_Contacts[i];
+				s_Contacts[i] = s_Contacts[j];
+				s_Contacts[j] = temp;
 			}
 		}
 	}
@@ -189,10 +188,10 @@ void Book:: Sort() {
 	ofstream ofile("notes.txt", ofstream::trunc);
 	for (int i = 0; i < n; i++) {
 		if (i == n - 1)
-			ofile << s_notes[i];
+			ofile << s_Contacts[i];
 		else
-			ofile << s_notes[i] << '\n';
+			ofile << s_Contacts[i] << '\n';
 	}
 	ofile.close();
-	delete[] s_notes;
+	delete[] s_Contacts;
 }

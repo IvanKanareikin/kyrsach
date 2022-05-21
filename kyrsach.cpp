@@ -67,23 +67,6 @@ int main() {
 				delete[] all_notes_arr;
 				break;
 			}
-			case '4': {
-				system("cls");
-				//Получаем все контакты
-				int count = 0;
-				string* all_notes_arr = a.all_Contacts(count);
-				//Выводим их в консоль
-				cout << "All contacts: " << endl;
-				for (int i = 0; i < count; i++)
-					cout << "[" << i + 1 << "]" << all_notes_arr[i] << endl;
-				cout << "Number of contacts to edit: ";
-				int choice = 0;
-				cin >> choice;
-				a.remove_Contact(all_notes_arr, count, choice);
-				a.add_Contact();
-				cout << "Contact changed!" << endl;
-				delete[] all_notes_arr;
-				break; }
 			}
 			break;
 		}
