@@ -158,7 +158,7 @@ void Book::remove_Contact(string* all_Contacts_arr, int count, int choice) {
 
 void Book::remove_all_Contacts() {
 	setlocale(0, "rus");
-	fstream file("notes.txt", ios::out | ios::trunc);
+	fstream file("notes.txt", ios::out);
 	if (!file.is_open()) {
 		cout << "File is not opened!" << endl;
 		exit(EXIT_FAILURE);
