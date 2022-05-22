@@ -39,7 +39,7 @@ int main() {
 				int n_found = 0;
 				string* found_Contacts = a.findContact(Contact_to_find, n_found);
 				if (found_Contacts) {
-					cout << "Found notes: ";
+					cout << "Found Contacts: ";
 					for (int i = 0; i < n_found; i++)
 						cout << found_Contacts[i] << endl;
 					delete[] found_Contacts;
