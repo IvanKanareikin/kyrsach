@@ -1,7 +1,6 @@
-﻿#include <iostream>
-#include <conio.h>
+﻿#include <conio.h>
 #include "Header.h"
-#include <string>
+
 
 
 int main() {
@@ -25,7 +24,7 @@ int main() {
 				show_menu1();
 					cout << "Выбери функцию: ";
 				choice1 = _getch();
-			} while (choice1 != '1' && choice1 != '2' && choice1 != '3' && choice1 != '4');
+			} while (choice1 != '1' && choice1 != '2' && choice1 != '3');
 			switch (choice1) {
 			case '1': {
 				system("cls");
