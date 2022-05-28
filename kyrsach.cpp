@@ -23,7 +23,6 @@ int main() {
 		case '1': {
 			system("cls");
 			a.add_Contact();
-			cout << "Note added!" << endl;
 		}
 				break;
 		case '2': {

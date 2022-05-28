@@ -46,11 +46,11 @@ void Book::see_all_Contacts() {
 	ifstream file("notes.txt");
 
 	if (!file.is_open()) {
-		cout << "No notes! Add them!" << endl;
+		cout << "No Contacts! Add them!" << endl;
 		return;
 	}
 	string one_Contacts;
-	cout << "Мои заметки: " << endl;
+	cout << "Мои контакты: " << endl;
 	for (int i = 1; !file.eof(); i++) {
 		getline(file, one_Contacts);
 		if (one_Contacts.empty())
