@@ -2,10 +2,6 @@
 #include <conio.h>
 
 
-
-
-
-
 int main() {
 
 	setlocale(0, "rus");
