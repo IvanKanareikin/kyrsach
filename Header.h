@@ -69,7 +69,5 @@ public:
 };
 
 void show_menu();
-void show_menu1();
-void show_menu2();
 
 #endif

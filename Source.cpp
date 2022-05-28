@@ -6,23 +6,15 @@ using namespace std;
 
 void show_menu() {
 	setlocale(0, "rus");
-	cout << "[1] Контакт." << endl;
-	cout << "[2] Книга." << endl;
-}
-
-void show_menu1() {
-	setlocale(0, "rus");
 	cout << "[1] Добавить контакт." << endl;
-	cout << "[2] Найти контакт." << endl;
-	cout << "[3] Удалить контакт." << endl;
+	cout << "[2] Показать все контакты." << endl;
+	cout << "[3] Найти контакт." << endl;
+	cout << "[4] Удалить контакт." << endl;
+	cout << "[5] Удалить все контакты." << endl;
+	cout << "[6] Редактировать контакт." << endl;
+	cout << "[7] Сортировка контактов по фамилии." << endl;
 }
 
-void show_menu2() {
-	setlocale(0, "rus");
-	cout << "[1] Показать все контакты." << endl;
-	cout << "[2] Удалить все контакты." << endl;
-	cout << "[3] Отсортировать все контакты." << endl;
-}
 
 void Book::add_Contact() {
 	setlocale(0, "rus");
