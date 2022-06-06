@@ -16,28 +16,38 @@ private:
 	string phone;
 public:
 	void SetFn() {
+		cin.clear();
+		cin.ignore(cin.rdbuf()->in_avail());
 		string name;
-		cin >> name;
+		getline(cin, name);
 		fname = name;
 	}
 	void SetSn() {
+		cin.clear();
+		cin.ignore(cin.rdbuf()->in_avail());
 		string secname;
-		cin >> secname;
+		getline(cin, secname);
 		sname = secname;
 	}
 	void SetAge() {
+		cin.clear();
+		cin.ignore(cin.rdbuf()->in_avail());
 		string AGE;
-		cin >> AGE;
+		getline(cin, AGE);
 		age = AGE;
 	}
 	void SetAd() {
+		cin.clear();
+		cin.ignore(cin.rdbuf()->in_avail());
 		string adres;
-		cin >> adres;
+		getline(cin, adres);
 		address = adres;
 	}
 	void SetP() {
+		cin.clear();
+		cin.ignore(cin.rdbuf()->in_avail());
 		string Phone;
-		cin >> Phone;
+		getline(cin, Phone);
 		phone = Phone;
 	}
 	string GetFn() {

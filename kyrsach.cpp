@@ -1,9 +1,11 @@
 ﻿#include "Header.h"
 #include <conio.h>
-
+#define __CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#define new DEBUG_NEW
 
 int main() {
-
 	setlocale(0, "rus");
 	char choice;
 	char Exit;
@@ -28,16 +30,16 @@ int main() {
 				break;
 		case '3': {
 			system("cls");
-			string note_to_find;
-			cout << "Note to find: ";
-			getline(cin, note_to_find);
+			string Contact_to_find;
+			cout << "Contact to find: ";
+			getline(cin, Contact_to_find);
 			int n_found = 0;
-			string* found_notes = a.findContact(note_to_find, n_found);
-			if (found_notes) {
-				cout << "Found notes: " << endl;
+			string* found_Contacts = a.findContact(Contact_to_find, n_found);
+			if (found_Contacts) {
+				cout << "Found Contacts: " << endl;
 				for (int i = 0; i < n_found; i++)
-					cout << "[" << i + 1 << "]" << found_notes[i] << endl;
-				delete[] found_notes;
+					cout << "[" << i + 1 << "]" << found_Contacts[i] << endl;
+				delete[] found_Contacts;
 			}
 			else {
 				cout << "no such note!" << endl;
@@ -95,4 +97,5 @@ int main() {
 	fflush(stdin);
 	Exit = _getch();
 		} while (Exit != '0');
-	}
+	return _CrtDumpMemoryLeaks();
+}

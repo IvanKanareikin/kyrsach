@@ -144,6 +144,7 @@ void Book::remove_Contact(string* all_Contacts_arr, int count, int choice) {
 			continue;
 		file << all_Contacts_arr[i] << endl;
 	}
+	file.close();
 }
 
 
